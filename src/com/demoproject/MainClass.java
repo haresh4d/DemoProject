@@ -6,8 +6,7 @@ import java.util.ArrayList;
 public class MainClass {
 
 	public static void main(String[] args) {
-		
-		
+
 //			try
 //			{
 //					
@@ -23,7 +22,7 @@ public class MainClass {
 //					System.out.println("ReleaseYear : " +  m.getReleaseYear());
 //				}
 //			}
-		
+
 //			try {
 //				
 //					ArrayList<Movie> movies = MoviesOperations.getMovies();
@@ -36,7 +35,7 @@ public class MainClass {
 //						
 //					}
 //			}
-		
+
 //			try {
 //				
 //					int result = MoviesOperations.deleteMovie(7);
@@ -47,23 +46,25 @@ public class MainClass {
 //						System.out.println("No Movies deleted");
 //					}
 //			}
-		
-			try {
-				
-				Movie m = MoviesOperations.getMovie(1);
-				int result =MoviesOperations.updateMovie(m.getId(), "Title 100", m.getDirector(), m.getReleaseYear(), m.getCategory());
-				
-				if(result >= 1) {
-					System.out.println(result + " movies updated");
-				}
-				else {
-					System.out.println("No Movies updated");
-				}
-				
-			}
-			catch(Exception e) {
-				System.out.print(e.getMessage());
-			}
+
+//			try {
+//				
+//				Movie m = MoviesOperations.getMovie(1);
+//				int result =MoviesOperations.updateMovie(m.getId(), "Title 100", m.getDirector(), m.getReleaseYear(), m.getCategory());
+//				
+//				if(result >= 1) {
+//					System.out.println(result + " movies updated");
+//				}
+//				else {
+//					System.out.println("No Movies updated");
+//				}
+//				
+//			}
+		try {
+
+		} catch (Exception e) {
+			System.out.print(e.getMessage());
+		}
 
 	}
 
