@@ -1,58 +1,65 @@
 package com.demoproject;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class MainClass {
 
 	public static void main(String[] args) {
 		
-			String url = "jdbc:mysql://localhost:3306/moviesdb";
-			String username = "root";
-			String password = "gecr@123";
-			String director = "Director 5";
-			int releaseYear = 2021;
-			String category = "Category 5";
-			String title = "Title 5";
 		
-			try
-			{
-		
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url, username, password);
-			//Statement st = con.createStatement();
-			
-			//int result = st.executeUpdate("insert into movies(title, director, releaseYear, category) values ('" + title + "','" + director + "'," + releaseYear + ",'"+ category + "')");
-			//ResultSet rs = st.executeQuery("select * from movies where director='" + director + "'");
-			
-			PreparedStatement pst = con.prepareStatement("insert into movies (title, director, releaseYear, category) values(?, ?, ?, ?)");
-			pst.setString(1, title);
-			pst.setString(2, director);
-			pst.setInt(3, releaseYear);
-			pst.setString(4, category);
-			
-			
-			int result = pst.executeUpdate();
-			
-			System.out.println(result + " records inserted");
-			
-			pst.setString(1, "Title 6");
-			pst.setString(2, "Director 6");
-			pst.setInt(3, 2024);
-			pst.setString(4, "Category 6");
-			
-			 result = pst.executeUpdate();
-			 System.out.println(result + " records inserted");
-			
-			
-//			while(rs.next()) {
-//				System.out.println("ID : " + rs.getInt(1));
-//				System.out.println("Title : " + rs.getString(2));
-//				System.out.println("Director : " + rs.getString(3));
-//				System.out.println("Release Year : " + rs.getInt(4));
-//				System.out.println("Category : " + rs.getString(5));
-//				System.out.println("**************************************");
+//			try
+//			{
+//					
+//				Movie m = MoviesOperations.getMovie(8);
+//				if(m==null) {
+//					System.out.println("No Such Movie");
+//				}
+//				else {
+//					System.out.println("Movie Found with following details:");
+//					System.out.println("Title : " +  m.getTitle());
+//					System.out.println("Director : " +  m.getDirector());
+//					System.out.println("Category : " +  m.getCategory());
+//					System.out.println("ReleaseYear : " +  m.getReleaseYear());
+//				}
 //			}
-			
+		
+//			try {
+//				
+//					ArrayList<Movie> movies = MoviesOperations.getMovies();
+//					for(int i=0; i<movies.size(); i++) {
+//						System.out.println("Title : " +  movies.get(i).getTitle());
+//						System.out.println("Director : " +  movies.get(i).getDirector());
+//						System.out.println("Category : " +  movies.get(i).getCategory());
+//						System.out.println("ReleaseYear : " +  movies.get(i).getReleaseYear());
+//						System.out.println("**************************************");
+//						
+//					}
+//			}
+		
+//			try {
+//				
+//					int result = MoviesOperations.deleteMovie(7);
+//					if(result >= 1) {
+//						System.out.println(result + " movies deleted");
+//					}
+//					else {
+//						System.out.println("No Movies deleted");
+//					}
+//			}
+		
+			try {
+				
+				Movie m = MoviesOperations.getMovie(1);
+				int result =MoviesOperations.updateMovie(m.getId(), "Title 100", m.getDirector(), m.getReleaseYear(), m.getCategory());
+				
+				if(result >= 1) {
+					System.out.println(result + " movies updated");
+				}
+				else {
+					System.out.println("No Movies updated");
+				}
+				
 			}
 			catch(Exception e) {
 				System.out.print(e.getMessage());
