@@ -6,6 +6,9 @@ import java.util.ArrayList;
 public class MainClass {
 
 	public static void main(String[] args) {
+		
+		
+		//Code to Get Single Movies
 
 //			try
 //			{
@@ -22,6 +25,9 @@ public class MainClass {
 //					System.out.println("ReleaseYear : " +  m.getReleaseYear());
 //				}
 //			}
+		
+		
+		//Code to get all Movies
 
 //			try {
 //				
@@ -35,6 +41,8 @@ public class MainClass {
 //						
 //					}
 //			}
+		
+		// Code tp delete a movie
 
 //			try {
 //				
@@ -46,6 +54,8 @@ public class MainClass {
 //						System.out.println("No Movies deleted");
 //					}
 //			}
+		
+		//Update Movie
 
 //			try {
 //				
