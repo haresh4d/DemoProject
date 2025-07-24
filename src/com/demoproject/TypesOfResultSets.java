@@ -23,9 +23,6 @@ public class TypesOfResultSets {
 				}
 			}
 			
-			
-			
-			
 		}
 		catch(Exception e) {
 			System.out.println(e.getMessage());
